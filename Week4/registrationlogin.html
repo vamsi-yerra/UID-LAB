@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>registration</title>
+<style>
+    td{
+        padding: 6px;
+        font-size: large;
+    }
+
+    div{
+        width: 500px;
+        font-size: larger;
+        background-color: rgb(20, 188, 84);
+    }
+    .reset{
+        background-color: rgb(220, 20, 20);
+        color: antiquewhite;
+    }
+    .submit{
+        background-color: rgb(41, 115, 4);
+        color:antiquewhite
+
+    }
+    button{
+        font-size: large;
+    }
+    body{
+        padding-left: 120px;
+        padding-top: 60px; 
+    }
+</style>
+
+</head>
+<body>
+    <form>
+    <div>
+         <table align="center" border="2" style="border-collapse: collapse;padding:10px" height="400" width="400">
+             
+            <h3 style="text-align: center;">USER REGISTRATION</h3>
+
+            <tr>
+              <td>  <label for="fname">FULL NAME:</label> </td> 
+              <td>  <input type="text" id="fname" placeholder="Fullname"> </td>
+            </tr>
+
+            <tr>
+              <td> <label for="email">E-mail</label> </td>
+              <td> <input type="email" id="email" placeholder="abcd@gmail.com"> </td>
+            </tr>
+
+            <tr>
+              <td> <label for="phone">Phone</label> </td>
+              <td> <input type="number" id="phone"  placeholder="Ex:1234567890"> </td>
+            </tr>
+
+            <tr>
+                <td> <label for="password">Password</label> </td>
+                <td> <input type="password" id="password" placeholder="Password">
+            </tr>
+
+            <tr>
+                <td colspan="2" style="padding-left: 110px;"> 
+                   <button type="reset" class="reset" onclick="alert('reset succesfully')">Reset</button>
+                   <button type="submit" class="submit" onclick="alert('Submitted succesfully')">Submit</button>
+                </td>
+            </tr>
+         </table>
+    </div>
+   </form>
+</body>
+</html>

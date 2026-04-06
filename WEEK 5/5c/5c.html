@@ -1,0 +1,96 @@
+<!DOCTYPE html> 
+<html> 
+<head> 
+<title>login webpage</title> 
+<style> 
+body{ 
+background-color: rgb(255, 195, 146); 
+background-size: cover; 
+            } 
+            nav{ 
+                background:#0b5ea6; 
+                text-align:center; 
+                padding:10px; 
+            } 
+            nav a{color:yellow; 
+                margin:12px; 
+                text-decoration:none;  
+                font-weight:bold; 
+                padding:5px; 
+            }   
+            .heading{ 
+                font-size: 35px; 
+                color: white; 
+                background-color: rgb(195, 81, 81); 
+                text-align: center; 
+                padding:12px; 
+                border-radius: 15px; 
+            } 
+            .main-container { 
+                width: 1150px; 
+                height: 50px; 
+            } 
+            .login-box { 
+                float: left; 
+                width: 360px; 
+                background-color: #579cb1;  
+                padding: 35px; 
+                color: white; 
+                border-radius: 15px; 
+                opacity: 0.8; 
+                border: 1px solid rgba(255,255,255,0.3); 
+                height: 450px; 
+            }  
+            .login input[type="email"],  
+.login input[type="password"]{  
+width:90%;  
+padding:6px;  
+margin:6px 0;  
+}  
+.button{ 
+border-radius: 15px; 
+background-color: #501df7; 
+color: white; 
+width: 75px; 
+} 
+iframe{  
+flex:1;  
+margin-left:20px;  
+height:520px;  
+border:none;  
+background:rgb(210, 255, 254);  
+border-radius:10px;  
+width: 950px; 
+opacity: 0.9; 
+}  
+</style> 
+</head> 
+<body> 
+<div class="heading">Amrita Vishwa Vidyapeetham</div> 
+<br> 
+<nav>  
+<a href="amaravati.html" target="campus">AMARAVATI</a>  
+<a href="amritapuri.html" target="campus">AMRITAPURI</a>  
+<a href="bengaluru.html" target="campus">BENGALURU</a>  
+<a href="chennai.html" target="campus">CHENNAI</a>  
+<a href="coimbatore.html" target="campus">COIMBATORE</a>   
+<a href="kochi.html" target="campus">KOCHI</a>  
+<a href="mysuru.html" target="campus">MYSURU</a> 
+</nav> 
+<div class="login-box">  
+<h2>Login</h2>  
+Email<br> 
+<input type="email"><br>  
+Password <br> 
+<input type="password">  
+<div class="remember">  
+<input type="checkbox"><label>Save me</label>  
+</div>  
+<input type="button" value="Login" class="button" >  
+<br><br>  
+<a href=" ">Forgot Password?</a><br>  
+No account? <a href=" ">Register</a>  
+</div>  
+<iframe name="campus" src="amaravati.html"></iframe>  
+</body> 
+</html> 

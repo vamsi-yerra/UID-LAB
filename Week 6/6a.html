@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>E-Commerce </title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        /* GRID LAYOUT */
+        .container {
+            display: grid;
+            grid-template-rows: auto auto 1fr auto;
+            grid-template-columns: 200px 1fr;
+
+            grid-template-areas:
+                "header header"
+                "sale sale"
+                "sidebar products"
+                "footer footer";
+
+            gap: 10px;
+            padding: 10px;
+        }
+
+        /* HEADER */
+        .header {
+            grid-area: header;
+            background: #222;
+            color: white;
+            text-align: center;
+            padding: 15px;
+        }
+
+        /* SALE BAR */
+        .sale {
+            grid-area: sale;
+            background: orange;
+            text-align: center;
+            padding: 10px;
+            font-weight: bold;
+        }
+
+        /* SIDEBAR */
+        .sidebar {
+            grid-area: sidebar;
+            background: #f4f4f4;
+            padding: 15px;
+        }
+
+        .sidebar h3 {
+            text-align: center;
+            margin-bottom: 15px;
+            color: #333;
+        }
+
+        .sidebar a {
+            display: block;
+            background: #007bff;
+            color: white;
+            padding: 10px;
+            margin: 8px 0;
+            border-radius: 5px;
+            text-decoration: none;
+            text-align: center;
+        }
+
+        .sidebar a:hover {
+            background: #0056b3;
+        }
+
+        /* PRODUCTS AREA */
+        .products {
+            grid-area: products;
+        }
+
+        /* PRODUCT GRID */
+        .product-grid {
+            display: none;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(2, auto);
+            gap: 15px;
+        }
+
+        /* SHOW SELECTED CATEGORY */
+        .product-grid:target {
+            display: grid;
+        }
+
+        /* PRODUCT CARD */
+        .card {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .card img {
+            width: 300px;
+            ;
+            height: 250px;
+            object-fit: cover;
+        }
+
+        .card button {
+            background: #28a745;
+            color: white;
+            border: none;
+            padding: 8px 12px;
+            margin-top: 8px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        .card button:hover {
+            background: #1e7e34;
+        }
+
+        /* FOOTER */
+        .footer {
+            grid-area: footer;
+            background: #222;
+            color: white;
+            text-align: center;
+            padding: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>My star mart</h1>
+        </div>
+        <div class="sale">
+            🔥 Big Sale Today – Up to 60% Off
+        </div>
+        <!-- SIDEBAR -->
+        <div class="sidebar">
+            <h3>Categories</h3>
+            <a href="#electronics">Electronics</a>
+            <a href="#clothing">Clothing</a>
+            <a href="#home">Home Appliances</a>
+            <a href="#books">Books</a>
+        </div>
+        <!-- PRODUCTS -->
+        <div class="products">
+            <!-- Electronics -->
+            <div id="electronics" class="product-grid">
+                <div class="card">
+                    <img
+                        src="https://www.bing.com/th/id/OIP.okPHK-lOk_E5nzOZsGx2dwHaFI?w=220&h=211&c=8&rs=1&qlt=90&o=6&dpr=1.3&pid=3.1&rm=2">
+                    <h3>Laptop</h3>
+                    <p>₹75,000</p>
+                    <button>Add to Cart</button>
+                </div>
+                <div class="card">
+                    <img
+                        src="https://www.bing.com/th/id/OIP.40yOILhZJMXfBXbio3C6tgHaHh?w=201&h=211&c=8&rs=1&qlt=90&o=6&dpr=1.3&pid=3.1&rm=2">
+                    <h3>Smartphone</h3>
+                    <p>₹35,000</p>
+                    <button>Add to Cart</button>
+                </div>
+                <div class="card">
+                    <img
+                        src="https://www.bing.com/th/id/OIP.GH5Yho7BJwJw8QWluCP67wHaF1?w=235&h=211&c=8&rs=1&qlt=90&o=6&dpr=1.3&pid=3.1&rm=2">
+                    <h3>Tablet</h3>
+                    <p>₹22,000</p>
+                    <button>Add to Cart</button>
+                </div>
+
+                <div class="card">
+                    <img
+                        src="https://th.bing.com/th/id/OIP.icyFR4j5Rmr-mnQ7HGuxpgAAAA?w=136&h=108&c=7&qlt=90&bgcl=befcf4&r=0&o=6&dpr=1.3&pid=13.1">
+                    <h3>Smart Watch</h3>
+                    <p>₹8,000</p>
+                    <button>Add to Cart</button>
+                </div>
+
+                <div class="card">
+                    <img
+                        src="https://www.bing.com/th/id/OIP.KOdZ-pfMhXO5UkASB0YtAAHaFj?w=248&h=211&c=8&rs=1&qlt=90&o=6&dpr=1.3&pid=3.1&rm=2">
+                    <h3>Bluetooth Speaker</h3>
+                    <p>₹3,000</p>
+                    <button>Add to Cart</button>
+                </div>
+
+                <div class="card">
+                    <img
+                        src="https://www.bing.com/th/id/OIP.qRzy8LVezpf3OAyU5-hv7AHaHa?w=238&h=211&c=8&rs=1&qlt=90&o=6&dpr=1.3&pid=3.1&rm=2">
+                    <h3>Headphones</h3>
+                    <p>₹2,500</p>
+                    <button>Add to Cart</button>
+                </div>
+
+            </div>
+
+            <!-- Clothing -->
+
+            <div id="clothing" class="product-grid">
+
+                <div class="card">
+                    <img src="https://m.media-amazon.com/images/I/71EKUMPRlxL._SY741_.jpg">
+                    <h3>T-shirt</h3>
+                    <p>₹400</p>
+                    <button>Add to Cart</button>
+                </div>
+
+                <div class="card">
+                    <img
+                        src="https://tse1.mm.bing.net/th/id/OIP.s2-WlmPb1uvim_ZBJiZ77gHaE7?w=276&h=184&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3">
+                    <h3>Jacket</h3>
+                    <p>₹1500</p>
+                    <button>Add to Cart</button>
+                </div>
+                <div class="card">
+                    <img src="https://m.media-amazon.com/images/I/814DcduIuoL._SX569_.jpg">
+                    <h3>Jeans</h3>
+                    <p>₹1200</p>
+                    <button>Add to Cart</button>
+                </div>
+
+                <div class="card">
+                    <img
+                        src="https://tse1.mm.bing.net/th/id/OIP.4z0dkhMwRkojMtKrVIn1AgHaIG?w=151&h=180&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3">
+                    <h3>Hoodie</h3>
+                    <p>₹900</p>
+                    <button>Add to Cart</button>
+                </div>
+
+                <div class="card">
+                    <img src="https://m.media-amazon.com/images/I/61GtS6IrR7L._SX569_.jpg">
+                    <h3>Formal Shirt</h3>
+                    <p>₹700</p>
+                    <button>Add to Cart</button>
+                </div>
+
+                <div class="card">
+                    <img
+                        src="https://tse1.mm.bing.net/th/id/OIP.MsX3WYE5mT0j8dhjZwFaoQHaHa?w=186&h=187&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3">
+                    <h3>Blazer</h3>
+                    <p>₹4000</p>
+                    <button>Add to Cart</button>
+                </div>
+
+            </div>
+
+            <!-- Home -->
+
+            <div id="home" class="product-grid">
+
+                <div class="card">
+                    <img
+                        src="https://tse4.mm.bing.net/th/id/OIP.I8cgv6y1f1R2OcGOHwo9GQHaHa?w=186&h=186&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3">
+                    <h3>Refrigerator</h3>
+                    <p>₹45,000</p>
+                    <button>Add to Cart</button>
+                </div>
+
+                <div class="card">
+                    <img src="https://m.media-amazon.com/images/I/61fgJs4zIqL._AC_UY327_FMwebp_QL65_.jpg">
+                    <h3>toaster</h3>
+                    <p>₹15,000</p>
+                    <button>Add to Cart</button>
+                </div>
+                <div class="card">
+                    <img
+                        src="https://tse1.mm.bing.net/th/id/OIP.dp-nNvKXYs2hS0o2tcOkWAHaJF?w=157&h=193&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3">
+                    <h3>Washing Machine</h3>
+                    <p>₹28,000</p>
+                    <button>Add to Cart</button>
+                </div>
+
+                <div class="card">
+                    <img
+                        src="https://tse1.mm.bing.net/th/id/OIP.D_Hz9OWz6MsHvdgJH6TvOAHaE7?w=260&h=180&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3">
+                    <h3>Air Conditioner</h3>
+                    <p>₹35,000</p>
+                    <button>Add to Cart</button>
+                </div>
+
+                <div class="card">
+                    <img
+                        src="https://tse1.mm.bing.net/th/id/OIP.EkUtPzjVx1UcVEwuWAXeLgHaI3?w=164&h=196&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3">
+                    <h3>Electric Kettle</h3>
+                    <p>₹1,500</p>
+                    <button>Add to Cart</button>
+                </div>
+
+                <div class="card">
+                    <img
+                        src="https://tse1.mm.bing.net/th/id/OIP.JUVtePiRUu5uzC1YJB5DJQHaHa?w=158&h=180&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3">
+                    <h3>Vacuum Cleaner</h3>
+                    <p>₹6,000</p>
+                    <button>Add to Cart</button>
+                </div>
+            </div>
+
+            <!-- Books -->
+
+            <div id="books" class="product-grid">
+
+                <div class="card">
+                    <img src="https://cdn2.penguin.com.au/covers/original/9780241377093.jpg">
+                    <h3>the book is rising</h3>
+                    <p>₹250</p>
+                    <button>Add to Cart</button>
+                </div>
+
+                <div class="card">
+                    <img
+                        src="https://tse1.mm.bing.net/th/id/OIP.2gRXkUtC27C1PrMmrkiAXgHaLH?rs=1&pid=ImgDetMain&o=7&rm=3">
+                    <h3>The adventures of chahal pahal</h3>
+                    <p>₹300</p>
+                    <button>Add to Cart</button>
+                </div>
+                <div class="card">
+                    <img src="https://m.media-amazon.com/images/I/81CmQcWsB0L._SL1500_.jpg">
+                    <h3>the power of mind</h3>
+                    <p>₹400</p>
+                    <button>Add to Cart</button>
+                </div>
+
+                <div class="card">
+                    <img
+                        src="https://www.bing.com/th/id/OIP.-QiO863QLpA0tM7px7mk7gHaKx?w=111&h=128&c=8&rs=1&qlt=90&o=6&dpr=1.3&pid=3.1&rm=2">
+                    <h3>heidi</h3>
+                    <p>₹350</p>
+                    <button>Add to Cart</button>
+                </div>
+
+                <div class="card">
+                    <img
+                        src="https://th.bing.com/th?id=OPAC.ht%2b2kK2mJGLiUA474C474&w=220&h=210&c=17&o=5&dpr=1.3&pid=21.1">
+                    <h3>the little prince</h3>
+                    <p>₹350</p>
+                    <button>Add to Cart</button>
+                </div>
+
+                <div class="card">
+                    <img src="https://th.bing.com/th/id/OPAC.fdRlsQHef5V7bg474C474?w=163&h=220&c=17&dpr=1.3&pid=21.1">
+                    <h3>you go this+</h3>
+                    <p>₹250</p>
+                    <button>Add to Cart</button>
+                </div>
+
+
+            </div>
+
+        </div>
+
+        <div class="footer">
+            © 2026 My E-Commerce Website | All rights reserved
+        </div>
+
+    </div>
+
+</body>
+
+</html>---
