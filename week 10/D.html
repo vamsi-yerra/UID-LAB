@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Even Odd Numbers</title>
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background: linear-gradient(135deg, #2b5876, #4e4376);
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0;
+    }
+
+    .container {
+        background: white;
+        padding: 30px;
+        border-radius: 15px;
+        text-align: center;
+        box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        width: 350px;
+    }
+
+    input {
+        width: 80%;
+        padding: 10px;
+        margin: 10px;
+        border-radius: 8px;
+        border: 1px solid #ccc;
+    }
+
+    button {
+        padding: 10px 20px;
+        border: none;
+        background: #4facfe;
+        color: white;
+        cursor: pointer;
+        border-radius: 8px;
+    }
+
+    button:hover {
+        background: #00c6ff;
+    }
+
+    #output {
+        margin-top: 20px;
+        text-align: left;
+        background: #f5f5f5;
+        padding: 10px;
+        border-radius: 10px;
+        max-height: 200px;
+        overflow-y: auto;
+        white-space: pre-line;
+    }
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+    <h2>Even & Odd Numbers</h2>
+
+<input type="number" id="numInput" placeholder="Enter limit">
+<br>
+<button onclick="printNumbers()">Print Numbers</button>
+
+<div id="output"></div>
+
+</div>
+
+<script>
+function printNumbers() {
+
+    let n = document.getElementById("numInput").value;
+
+    if (n === "") {
+        alert("Enter limit");
+        return;
+    }
+
+    n = Number(n);
+
+    let result = "";
+
+    for (let i = 0; i <= n; i++) {
+        if (i % 2 === 0)
+            result += i + " is Even\n";
+        else
+            result += i + " is Odd\n";
+    }
+
+    document.getElementById("output").textContent = result;
+}
+</script>
+
+</body>
+</html>

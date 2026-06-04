@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<title>Registration Form</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial;
+    background: linear-gradient(135deg, #141e30, #243b55);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    background: white;
+    color: black;
+    padding: 30px;
+    border-radius: 12px;
+    text-align: center;
+    width: 320px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+}
+
+input {
+    width: 80%;
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+}
+
+button {
+    margin-top: 15px;
+    padding: 10px 20px;
+    border: none;
+    background: #243b55;
+    color: white;
+    cursor: pointer;
+    border-radius: 8px;
+}
+
+button:hover {
+    background: #141e30;
+}
+
+#msg {
+    margin-top: 10px;
+    font-weight: bold;
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+<h2>Registration Form</h2>
+
+<input type="text" id="name" placeholder="Name"><br> <input type="text" id="email" placeholder="Email"><br> <input type="password" id="pass" placeholder="Password"><br>
+
+<button onclick="validateForm()">Register</button>
+
+<p id="msg"></p>
+</div>
+
+<script>
+function validateForm() {
+
+    let a = document.getElementById("name").value;
+    let b = document.getElementById("email").value;
+    let c = document.getElementById("pass").value;
+
+    let msg = document.getElementById("msg");
+
+    if (a === "") {
+        msg.innerText = "Name required";
+        msg.style.color = "red";
+        return;
+    }
+
+    let emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+
+    if (!emailPattern.test(b)) {
+        msg.innerText = "Invalid email";
+        msg.style.color = "red";
+        return;
+    }
+
+    let strong = /^(?=.*[A-Z])(?=.*[!@#$%^&*]).{6,}$/;
+
+    if (!strong.test(c)) {
+        msg.innerText = "Weak password";
+        msg.style.color = "red";
+        return;
+    }
+
+    msg.innerText = "Registration Successful";
+    msg.style.color = "green";
+}
+</script>
+
+</body>
+</html>

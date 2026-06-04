@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<title>Email Validation</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial;
+    background: linear-gradient(135deg, #ff6a00, #ee0979);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    text-align: center;
+    width: 300px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+input {
+    width: 80%;
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+}
+
+button {
+    margin-top: 15px;
+    padding: 10px 20px;
+    border: none;
+    background: #ee0979;
+    color: white;
+    cursor: pointer;
+    border-radius: 8px;
+}
+
+button:hover {
+    background: #c80060;
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+    <h2>Email Check</h2>
+
+<input type="text" id="email" placeholder="Enter Email"><br>
+<button onclick="validateEmail()">Submit</button>
+
+</div>
+
+<script>
+function validateEmail() {
+
+    let a = document.getElementById("email").value;
+
+    if (a === "") {
+        alert("Enter email");
+        return;
+    }
+
+    let pattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+
+    if (pattern.test(a)) {
+        alert("Email is valid");
+    } 
+    else {
+        alert("Invalid Email");
+    }
+}
+</script>
+
+</body>
+</html>

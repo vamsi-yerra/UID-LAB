@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<title>Mobile & Password Validation</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial;
+    background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    text-align: center;
+    width: 320px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+input {
+    width: 80%;
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+}
+
+#msg {
+    margin-top: 10px;
+    font-weight: bold;
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+    <h2>Mobile & Password</h2>
+
+<input type="text" id="mobile" placeholder="Enter Mobile" onblur="validateMobile()"><br>
+<input type="password" id="pass" placeholder="Enter Password" onkeyup="checkPass()">
+
+<p id="msg"></p>
+
+</div>
+
+<script>
+function validateMobile() {
+
+    let a = document.getElementById("mobile").value;
+    let msg = document.getElementById("msg");
+
+    if (a === "") {
+        msg.innerText = "Enter mobile number";sssss
+        msg.style.color = "red";
+        return;
+    }
+
+    let pattern = /^[0-9]{10}$/;
+
+    if (pattern.test(a)) {
+        msg.innerText = "Valid Mobile Number";
+        msg.style.color = "green";
+    } 
+    else {
+        msg.innerText = "Invalid Mobile Number";
+        msg.style.color = "red";
+    }
+}
+
+function checkPass() {
+
+    let b = document.getElementById("pass").value;
+    let msg = document.getElementById("msg");
+
+    if (b === "") {
+        msg.innerText = "Enter password";
+        msg.style.color = "red";
+        return;
+    }
+
+    let strong = /^(?=.*[A-Z])(?=.*[!@#$%^&*]).{6,}$/;
+
+    if (strong.test(b)) {
+        msg.innerText = "Strong Password";
+        msg.style.color = "green";
+    } 
+    else {
+        msg.innerText = "Weak Password";
+        msg.style.color = "red";
+    }
+}
+</script>
+
+</body>
+</html>
