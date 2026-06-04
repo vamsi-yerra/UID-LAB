@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Mobile Check</title>
+</head>
+<body>
+
+<h3>Enter Mobile Number:</h3>
+
+<input type="text" id="mobile">
+<button onclick="checkMobile()">Check</button>
+
+<p id="msg"></p>
+
+<script>
+function checkMobile() {
+    var num = document.getElementById("mobile").value;
+    var msg = document.getElementById("msg");
+
+    if (num.length == 10 && /^[0-9]+$/.test(num)) {
+        msg.innerHTML = "Valid Mobile Number";
+        msg.style.color = "green";
+    } else {
+        msg.innerHTML = "Invalid Mobile Number";
+        msg.style.color = "red";
+    }
+}
+</script>
+
+</body>
+</html>

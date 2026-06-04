@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <title>GRADE SHEET</title>
+<head> 
+</head>
+<body >
+<script>
+    function grade() {
+        let i = 1;
+        let sum = 0;
+
+        while (i <= 6) {
+            let marks = parseInt(prompt("enter your marks in sub " + i));
+            sum = sum + marks;
+            i++;
+        }
+
+        let avg = sum / 6;
+
+        if (avg < 60) {
+            document.write("fail");
+        } 
+        else if (avg < 70) {
+            document.write("grade D");
+        } 
+        else if (avg < 80) {
+            document.write("grade C");
+        } 
+        else if (avg < 90) {
+            document.write("grade B");
+        } 
+        else if (avg < 100) {
+            document.write("grade A");
+        }
+    }
+
+    grade();
+</script>
+</body>
+</html>
